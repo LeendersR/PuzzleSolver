@@ -2,7 +2,7 @@
 
 A program where you can create and solve your own puzzles. You can also use the built-in solver to solve your puzzles for you.
 
-![](img/screenshot.png =720x)
+![](img/screenshot.png)
 
 #### Loading a puzzle
 Puzzles can be loaded by using File->Load puzzle and then opening a file in tests/files/\*Puzzle*.txt.
