@@ -224,6 +224,7 @@ public class MainFrame extends JFrame {
         loadPuzzleMenuItem.setEnabled(false);
         solveMenu.setEnabled(false);
         puzzleView.setEnabled(false);
+        editMenu.setEnabled(false);
 
         final Puzzle oldPuzzle = puzzleView.getPuzzle();
         final DLX dlx = new DLX(new Puzzle(oldPuzzle.getName(), new Box(oldPuzzle.getBox().getRowCount(), oldPuzzle.getBox().getColumnCount(), oldPuzzle.getBox().getBlockedPositions()), oldPuzzle.getBagOfPieces()));
@@ -234,6 +235,7 @@ public class MainFrame extends JFrame {
                 solveMenu.setEnabled(true);
                 puzzleView.setEnabled(true);
                 puzzleView.setPaintPlacements(true);
+                editMenu.setEnabled(true);
             }
         });
 
@@ -276,7 +278,7 @@ public class MainFrame extends JFrame {
         if (stopAfterFirstSolutionCheckBoxMenuItem.getState()) {
             dlx.addListener(new SolverListener() {
                 public void solutionFound(int solutionNumber, Puzzle puzzle) {
-                    if (solutionNumber == 1)
+                    if (solutionNumber >= 1)
                         dlx.stop();
                 }
             });

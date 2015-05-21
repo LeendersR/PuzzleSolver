@@ -185,6 +185,8 @@ public class DLX extends Solver {
             }
 
             findAll();
+            if (stopSolver)
+                return;
 
             for (Node leftOfRow = row.left; leftOfRow != row; leftOfRow = leftOfRow.left) {
                 uncover(leftOfRow.column);
